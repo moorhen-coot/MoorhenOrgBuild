@@ -29,7 +29,7 @@ jobs:
       working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: npm run build
     - name: Copy coi service worker
-      run: cp /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/node_modules/coi-serviceworker/coi-serviceworker.min.js dist/
+      run: cp /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/coi-serviceworker/coi-serviceworker.min.js dist/
     - name: fix assets url
       working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/dist
       run: |
