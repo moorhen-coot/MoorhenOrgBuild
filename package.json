@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "coi-serviceworker": "^0.1.7",
+    "moorhen": "https://github.com/moorhen-coot/Moorhen/releases/download/v0.6.0/moorhen-0.6.0.tgz",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "moorhen": "https://github.com/moorhen-coot/Moorhen/releases/download/v0.6.0/moorhen-0.6.0.tgz"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

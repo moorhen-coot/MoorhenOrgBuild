@@ -25,6 +25,7 @@ jobs:
       run: |
         mkdir /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/public/
         cp -r /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/moorhen/baby-gru/ /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/public/
+        cp /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/node_modules/coi-serviceworker/coi-serviceworker.min.js dist/
     - name: npm build
       working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: npm run build
