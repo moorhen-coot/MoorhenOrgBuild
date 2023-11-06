@@ -26,6 +26,11 @@ jobs:
     - name: npm build
       working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: npm run build
+    - name: fix assets url
+      working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/dist
+      run: |
+        sed -i 's/assets/MoorhenOrgBuild\/assets/g' index.html
+        sed -i 's/baby-gru/MoorhenOrgBuild\/baby-gru/g' index.html
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
