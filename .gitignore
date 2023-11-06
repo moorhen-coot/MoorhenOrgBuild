@@ -1,2 +1,4 @@
 package-lock.json
 public/baby-gru/*
+dist/*
+node_modules/*
