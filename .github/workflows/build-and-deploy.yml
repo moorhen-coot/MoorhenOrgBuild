@@ -15,22 +15,22 @@ jobs:
       with:
         node-version: 16
     - name: Install dependencies 
-      working-directory: /home/runner/work/MoorhenOrgBuild/
+      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
       run: sudo apt-get install -y npm
     - name: npm install
-      working-directory: /home/runner/work/MoorhenOrgBuild/
+      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
       run: npm install
     - name: Copy baby-gru into public
-      working-directory: /home/runner/work/MoorhenOrgBuild/
-      run: cp -r /home/runner/work/MoorhenOrgBuild/node_modules/moorhen/baby-gru /home/runner/work/MoorhenOrgBuild/public/
+      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
+      run: cp -r /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/moorhen/baby-gru /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/public/
     - name: npm build
-      working-directory: /home/runner/work/MoorhenOrgBuild/
+      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
       run: npm run build
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
         name: page
-        path: /home/runner/work/MoorhenOrgBuild/dist
+        path: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/dist
         if-no-files-found: error
   
   deploy:
