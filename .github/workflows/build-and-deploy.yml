@@ -15,16 +15,16 @@ jobs:
       with:
         node-version: 16
     - name: Install dependencies 
-      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
+      working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: sudo apt-get install -y npm
     - name: npm install
-      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
+      working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: npm install
     - name: Copy baby-gru into public
-      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
+      working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: cp -r /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/moorhen/baby-gru /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/public/
     - name: npm build
-      working-directory: /home/runner/work/MoorhenOrgBuild//MoorhenOrgBuild/
+      working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: npm run build
     - name: Upload artifact
       uses: actions/upload-artifact@v3
@@ -40,7 +40,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
-      
+    permissions:
+      pages: write
+      id-token: write
     steps:
     - uses: actions/download-artifact@master
       with:
