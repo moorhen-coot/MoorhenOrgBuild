@@ -30,11 +30,6 @@ jobs:
       run: npm run build
     - name: Copy coi service worker
       run: cp /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/coi-serviceworker/coi-serviceworker.min.js dist/
-    - name: fix assets url
-      working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/dist
-      run: |
-        sed -i 's/assets/MoorhenOrgBuild\/assets/g' index.html
-        sed -i 's/baby-gru/MoorhenOrgBuild\/baby-gru/g' index.html
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
