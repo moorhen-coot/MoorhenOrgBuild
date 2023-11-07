@@ -22,9 +22,7 @@ jobs:
       run: npm install
     - name: Copy baby-gru into public
       working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
-      run: |
-        mkdir /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/public/
-        cp -r /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/moorhen/baby-gru/ /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/public/
+      run: cp -r /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/moorhen/baby-gru/ /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/public/
     - name: npm build
       working-directory: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/
       run: npm run build
