@@ -17,20 +17,30 @@
 
     <script>
       window.onload = () => {
-        createCCP4Module({
-          print(t) { console.log(["output", t]) },
-          printErr(t) { console.log(["output", t]); }
-        })
+        try {
+          createCCP4Module({
+            print(t) {
+              console.log(["output", t]);
+            },
+            printErr(t) {
+              console.log(["output", t]);
+            }
+          })
           .then(function (CCP4Mod) {
             window.CCP4Module = CCP4Mod;
           })
           .catch((e) => {
             console.log("CCP4 problem :(");
             console.log(e);
-            });
+            alert("There was a problem loading the CCP4 module. Please clear your browser's cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.");
+          });
+        } catch (err) {
+          console.err(err)
+          alert("There was a problem loading Moorhen. Please clear your browser's cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.")
+        }
       }
     </script>
-    <script src="/baby-gru/wasm/web_example.js"></script>
+    <script src="/baby-gru/wasm/web_example.js" onerror="alert('There was a problem loading WASM. Please clear your browsers cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.')"></script>
   </head>
 
   <body>
