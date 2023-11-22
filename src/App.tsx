@@ -1,14 +1,16 @@
-import { MoorhenReduxProvider, MoorhenContainer } from 'moorhen'
+import { MoorhenReduxProvider, MoorhenContainer, ErrorBoundary } from 'moorhen'
 import React from 'react'
 
 function App() {
 
   return  <React.StrictMode>
-            <div className="App">
-              <MoorhenReduxProvider>
-                <MoorhenContainer/>
-              </MoorhenReduxProvider>  
-            </div>
+            <ErrorBoundary >
+              <div className="App">
+                <MoorhenReduxProvider>
+                  <MoorhenContainer/>
+                </MoorhenReduxProvider>  
+              </div>
+            </ErrorBoundary>
           </React.StrictMode>
 }
 
