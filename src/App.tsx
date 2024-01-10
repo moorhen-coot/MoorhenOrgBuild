@@ -1,6 +1,6 @@
-import { MoorhenReduxProvider, ErrorBoundary, MoorhenContainer } from 'moorhen'
+import { MoorhenReduxProvider, ErrorBoundary } from 'moorhen'
 import React from 'react'
-//import { MoorhenRouter } from './MoorhenRouter'
+import { MoorhenRouter } from './MoorhenRouter'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <ErrorBoundary >
       <div className="App">
         <MoorhenReduxProvider>
-          <MoorhenContainer />
+          <MoorhenRouter />
         </MoorhenReduxProvider>
       </div>
     </ErrorBoundary>
