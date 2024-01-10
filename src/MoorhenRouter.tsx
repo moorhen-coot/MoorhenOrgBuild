@@ -31,6 +31,7 @@ const MoorhenContainerWithPdb: React.FC = () => {
                 const coordUrl: string = `https://www.ebi.ac.uk/pdbe/entry-files/download/${pdbCode}.cif`
                 await newMolecule.loadToCootFromURL(coordUrl, pdbCode)
                 await newMolecule.addRepresentation("CRs", "/*/*")
+                await newMolecule.fetchIfDirtyAndDraw("ligands")
                 newMolecule.centreOn("/*/*")
                 glRef.current?.setZoom(4.0)
                 dispatch(addMolecule(newMolecule))
@@ -48,7 +49,15 @@ const moorhenRouter = createBrowserRouter(
             element: <MoorhenContainer />,
         },
         {
+            path: "/",
+            element: <MoorhenContainer />,
+        },
+        {
             path: "/pdb/:pdbId",
+            element: <MoorhenContainerWithPdb />,
+        },
+        {
+            path: "/:pdbId",
             element: <MoorhenContainerWithPdb />,
         },
     ]
