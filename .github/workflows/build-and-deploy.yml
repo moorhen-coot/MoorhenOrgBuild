@@ -32,7 +32,7 @@ jobs:
     - name: Copy coi service worker
       run: cp /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/node_modules/coi-serviceworker/coi-serviceworker.min.js dist/
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: page
         path: /home/runner/work/MoorhenOrgBuild/MoorhenOrgBuild/dist
@@ -49,13 +49,13 @@ jobs:
       pages: write
       id-token: write
     steps:
-    - uses: actions/download-artifact@master
+    - uses: actions/download-artifact@v4
       with:
         name: page
         path: .
     - uses: actions/configure-pages@v1
-    - uses: actions/upload-pages-artifact@v1
+    - uses: actions/upload-pages-artifact@v3
       with:
         path: .
     - id: deployment
-      uses: actions/deploy-pages@main
+      uses: actions/deploy-pages@v4
